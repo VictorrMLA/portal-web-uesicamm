@@ -1,0 +1,46 @@
+<h2 class="h3 fw-bold mb-3">Soporte Técnico UESICAMM</h2>
+<p class="fs-5">Si presenta problemas con sus trámites, registros en la plataforma o acceso al SIIA, envíe una solicitud a nuestra mesa de ayuda.</p>
+
+<div class="row my-4">
+  <div class="col-12 col-lg-8 col-xl-7">
+    <div class="card border-0 shadow-sm p-4 bg-body-tertiary">
+      <form onsubmit="event.preventDefault(); alert('Ticket de soporte registrado correctamente.');">
+        
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Nombre Completo:</label>
+          <input type="text" class="form-control" placeholder="Ingrese su nombre y apellidos" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">CURP:</label>
+          <input type="text" class="form-control text-uppercase" maxlength="18" placeholder="Ej. ABCD123456HDFRR09" pattern="[A-Za-z0-9]{18}" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Proceso sobre el cual requiere información:</label>
+          <select class="form-select" required>
+            <option value="" selected disabled>Seleccione un proceso...</option>
+            <option value="admision">Admisión en Educación Básica / Media Superior</option>
+            <option value="cambios">Cambios de Centro de Trabajo (CCT)</option>
+            <option value="promocion_h">Promoción Horizontal</option>
+            <option value="promocion_v">Promoción Vertical</option>
+            <option value="siia">Acceso o Incidencia en SIIA / VENUS</option>
+            <option value="otro">Otro / Consulta General</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Correo Electrónico:</label>
+          <input type="email" class="form-control" placeholder="ejemplo@dominio.com" required>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label fw-semibold">Descripción de la Incidencia:</label>
+          <textarea class="form-control" rows="4" placeholder="Detalle claramente el problema o solicitud..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary px-4 py-2">Enviar Ticket de Soporte</button>
+      </form>
+    </div>
+  </div>
+</div>
