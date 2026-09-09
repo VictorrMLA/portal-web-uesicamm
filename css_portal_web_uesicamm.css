@@ -20,16 +20,6 @@
   --sombra: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-[data-theme="dark"] {
-  --bg-fondo: #121212;
-  --bg-header: #1E1E1E;
-  --text-principal: #E0E0E0;
-  --color-primario: var(--color-dorado);
-  --color-secundario: #FFFFFF;
-  --bg-card: #1E1E1E;
-  --sombra: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-
 * {
   font-family: 'Gibson', 'Segoe UI', Roboto, sans-serif;
 }
@@ -38,7 +28,6 @@ body {
   background-color: var(--bg-fondo);
   color: var(--text-principal);
   min-height: 100vh;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Ajustes Pantallas Ultra Anchas */
@@ -68,14 +57,10 @@ body {
   background-color: #ccc;
 }
 
-/* -------------------------------------------------------------------------
-   COMPORTAMIENTO DE MENÚS EN MODO CLARO (HOVER GUINDA + LETRAS BLANCAS)
-   ------------------------------------------------------------------------- */
-
-/* Estado Normal del Menú Superior */
-html[data-theme="light"] .main-nav .navbar-nav .nav-link,
-html[data-theme="light"] .navbar-nav .nav-link-inst,
-html[data-theme="light"] .header .nav-link {
+/* MENÚ SUPERIOR (HOVER GUINDA + LETRAS BLANCAS) */
+.main-nav .navbar-nav .nav-link,
+.navbar-nav .nav-link-inst,
+.header .nav-link {
   color: var(--color-guinda) !important;
   background-color: transparent !important;
   font-weight: 600;
@@ -85,45 +70,40 @@ html[data-theme="light"] .header .nav-link {
   transition: all 0.2s ease-in-out;
 }
 
-/* Estado Hover / Desplegado: Fondo Guinda y Letras Blancas */
-html[data-theme="light"] .main-nav .navbar-nav .nav-link:hover,
-html[data-theme="light"] .main-nav .navbar-nav .nav-link:focus,
-html[data-theme="light"] .main-nav .navbar-nav .nav-link.show,
-html[data-theme="light"] .navbar-nav .nav-link-inst:hover,
-html[data-theme="light"] .navbar-nav .nav-link-inst:focus,
-html[data-theme="light"] .navbar-nav .nav-link-inst.show,
-html[data-theme="light"] .header .nav-link:hover,
-html[data-theme="light"] .header .nav-link:focus,
-html[data-theme="light"] .header .nav-link.show {
+.main-nav .navbar-nav .nav-link:hover,
+.main-nav .navbar-nav .nav-link:focus,
+.main-nav .navbar-nav .nav-link.show,
+.navbar-nav .nav-link-inst:hover,
+.navbar-nav .nav-link-inst:focus,
+.navbar-nav .nav-link-inst.show,
+.header .nav-link:hover,
+.header .nav-link:focus,
+.header .nav-link.show {
   background-color: var(--color-guinda) !important;
   color: #FFFFFF !important;
 }
 
-/* Estado Normal de Submenús (Dropdown) */
-html[data-theme="light"] .dropdown-menu {
+/* SUBMENÚS (DROPDOWN) */
+.dropdown-menu {
   background-color: #FFFFFF !important;
   border-top: 3px solid var(--color-guinda) !important;
 }
 
-html[data-theme="light"] .dropdown-menu .dropdown-item {
+.dropdown-menu .dropdown-item {
   color: #333333 !important;
   font-size: 0.88rem;
   padding: 10px 18px;
   transition: all 0.2s ease-in-out;
 }
 
-/* Estado Hover en Submenús: Fondo Guinda y Letras Blancas */
-html[data-theme="light"] .dropdown-menu .dropdown-item:hover,
-html[data-theme="light"] .dropdown-menu .dropdown-item:focus,
-html[data-theme="light"] .dropdown-menu .dropdown-item:active {
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:active {
   background-color: var(--color-guinda) !important;
   color: #FFFFFF !important;
 }
 
-/* -------------------------------------------------------------------------
-   BOTONES TARJETAS (CORRECCIÓN DEL AZUL DE BOOTSTRAP A GUINDA)
-   ------------------------------------------------------------------------- */
-
+/* BOTONES INSTITUCIONALES */
 .btn-outline-primary {
   color: var(--color-guinda) !important;
   border-color: var(--color-guinda) !important;
