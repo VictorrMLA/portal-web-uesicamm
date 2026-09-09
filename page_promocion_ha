@@ -1,0 +1,16 @@
+<h2 class="h3 fw-bold mb-3">Promoción a Horas Adicionales</h2>
+<p class="fs-5">Proceso dirigido al personal docente contratado por hora/semana/mes para acceder a un mayor número de horas clase en su materia o módulo.</p>
+
+<div class="card my-4 border-0 border-start border-4 border-danger shadow-sm bg-body-tertiary">
+  <div class="card-body p-4">
+    <h3 class="h5 fw-bold mb-3 texto-guinda">Requisitos Principales</h3>
+    <ul class="fs-6 mb-0 lh-lg">
+      <li>Nombramiento definitivo (Código 10 o equivalente) en la asignatura correspondiente.</li>
+      <li>Contar con un mínimo de 2 años de antigüedad en la función.</li>
+      <li>Cubrir el perfil profesiográfico exigido para la materia.</li>
+      <li>Acreditar los criterios multifactoriales establecidos en la convocatoria vigente.</li>
+    </ul>
+  </div>
+</div>
+
+<a href="#convocatorias" data-vista="convocatorias" class="btn btn-primary px-4 py-2">Ver Convocatoria de Horas Adicionales</a>
