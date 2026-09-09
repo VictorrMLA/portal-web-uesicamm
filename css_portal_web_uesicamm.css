@@ -1,249 +1,251 @@
-<style>
-  @font-face {
-    font-family: 'Gibson';
-    src: url('https://michoacan.gob.mx/cdn/fonts/gibson-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+@font-face {
+  font-family: 'Gibson';
+  src: url('https://michoacan.gob.mx/cdn/fonts/gibson-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg-fondo: #F4F5F7;
+  --bg-header: #FFFFFF;
+  --color-guinda: #911A3A;
+  --color-dorado: #C83182;
+  --color-rosa-claro: #FFC3D0;
+  --color-gris-texto: #555555;
+  --text-principal: #333333;
+  --color-primario: var(--color-guinda);
+  --color-secundario: var(--color-dorado);
+  --hover-menu: var(--color-guinda);
+  --bg-card: #FFFFFF;
+  --sombra: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+  --bg-fondo: #121212;
+  --bg-header: #1E1E1E;
+  --text-principal: #E0E0E0;
+  --color-primario: var(--color-dorado);
+  --color-secundario: #FFFFFF;
+  --hover-menu: var(--color-guinda);
+  --bg-card: #1E1E1E;
+  --sombra: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  font-family: 'Gibson', 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-fondo);
+  color: var(--text-principal);
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Ajustes Pantallas Ultra Anchas (27 y 32 Pulgadas) */
+@media (min-width: 1400px) {
+  .container-xxl {
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container-xxl {
+    max-width: 1720px;
+  }
+}
+
+/* Header y Navegación */
+.header {
+  background-color: var(--bg-header);
+  box-shadow: var(--sombra);
+  border-bottom: 4px solid var(--color-rosa-claro);
+}
+
+.logo {
+  max-height: 55px;
+  object-fit: contain;
+}
+
+.separador-logos {
+  width: 1px;
+  height: 38px;
+  background-color: #ccc;
+}
+
+.nav-link-inst {
+  color: var(--color-primario) !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 8px 14px !important;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-link-inst:hover,
+.nav-link-inst:focus,
+.nav-link-inst.show {
+  background-color: var(--color-guinda) !important;
+  color: #FFFFFF !important;
+}
+
+.dropdown-menu {
+  background-color: var(--bg-card);
+  border-top: 3px solid var(--color-guinda) !important;
+}
+
+.dropdown-item {
+  color: var(--text-principal);
+  font-size: 0.88rem;
+  padding: 10px 18px;
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--color-guinda) !important;
+  color: #FFFFFF !important;
+}
+
+/* Carrusel Responsivo Dinámico */
+.carrusel-contenedor {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: var(--bg-card);
+}
+
+.carrusel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
+  height: clamp(200px, 28vw, 480px);
+  object-fit: cover;
+}
+
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(145, 26, 58, 0.75);
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.carrusel-btn:hover {
+  background: rgba(145, 26, 58, 1);
+}
+
+.prev {
+  left: 12px;
+}
+
+.next {
+  right: 12px;
+}
+
+.carrusel-indicadores {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--color-guinda);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--color-guinda);
+  border-color: white;
+  transform: scale(1.2);
+}
+
+/* SPA View Controls */
+.vista-seccion {
+  display: none;
+}
+
+.vista-seccion.active {
+  display: block;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
   }
 
-  :root {
-    --bg-fondo: #F4F5F7;
-    --bg-header: #FFFFFF;
-    --color-guinda: #911A3A;
-    --color-dorado: #C83182;
-    --color-rosa-claro: #FFC3D0;
-    --color-gris-texto: #555555;
-    --text-principal: #333333;
-    --color-primario: var(--color-guinda);
-    --color-secundario: var(--color-dorado);
-    --hover-menu: #F9E8EC;
-    --bg-card: #FFFFFF;
-    --sombra: 0 4px 10px rgba(0, 0, 0, 0.08);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  [data-theme="dark"] {
-    --bg-fondo: #121212;
-    --bg-header: #1E1E1E;
-    --text-principal: #E0E0E0;
-    --color-primario: var(--color-dorado);
-    --color-secundario: #FFFFFF;
-    --hover-menu: #2A2A2A;
-    --bg-card: #1E1E1E;
-    --sombra: 0 4px 10px rgba(0, 0, 0, 0.4);
-  }
+/* Botones y Colores Institucionales */
+.btn-primary,
+.bg-guinda {
+  background-color: var(--color-guinda) !important;
+  border-color: var(--color-guinda) !important;
+  color: #FFFFFF !important;
+}
 
-  * {
-    font-family: 'Gibson', 'Segoe UI', Roboto, sans-serif;
-  }
+.btn-primary:hover {
+  background-color: #74132e !important;
+  border-color: #74132e !important;
+}
 
-  body {
-    background-color: var(--bg-fondo);
-    color: var(--text-principal);
-    min-height: 100vh;
-    transition: background-color 0.3s, color 0.3s;
-  }
+.texto-guinda {
+  color: var(--color-guinda) !important;
+}
 
-  /* Ajustes Pantallas Ultra Anchas (27 y 32 Pulgadas) */
-  @media (min-width: 1400px) {
-    .container-xxl {
-      max-width: 1320px;
-    }
-  }
+.texto-dorado {
+  color: var(--color-dorado) !important;
+}
 
-  @media (min-width: 1920px) {
-    .container-xxl {
-      max-width: 1720px;
-    }
-  }
+/* Footer */
+.footer {
+  background-color: var(--bg-header);
+  border-top: 3px solid var(--color-guinda) !important;
+}
 
-  /* Header y Navegación */
-  .header {
-    background-color: var(--bg-header);
-    box-shadow: var(--sombra);
-    border-bottom: 4px solid var(--color-rosa-claro);
-  }
+.link-footer {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-weight: 600;
+}
 
-  .logo {
-    max-height: 55px;
-    object-fit: contain;
-  }
+.footer-bottom {
+  background-color: var(--color-guinda);
+}
 
-  .separador-logos {
-    width: 1px;
-    height: 38px;
-    background-color: #ccc;
-  }
-
+/* Soporte Móvil Adicional */
+@media (max-width: 991.88px) {
   .nav-link-inst {
-    color: var(--color-primario) !important;
-    font-weight: 600;
-    font-size: 0.92rem;
-    padding: 8px 14px !important;
-    border-radius: 4px;
-    transition: all 0.2s ease-in-out;
+    padding: 10px 12px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
-
-  .nav-link-inst:hover {
-    background-color: var(--hover-menu);
-    color: var(--color-secundario) !important;
-  }
-
-  .dropdown-menu {
-    background-color: var(--bg-card);
-    border-top: 3px solid var(--color-guinda) !important;
-  }
-
-  .dropdown-item {
-    color: var(--text-principal);
-    font-size: 0.88rem;
-    padding: 10px 18px;
-  }
-
-  .dropdown-item:hover {
-    background-color: var(--hover-menu);
-    color: var(--color-guinda);
-  }
-
-  /* Carrusel Responsivo Dinámico */
-  .carrusel-contenedor {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 8px;
-    background-color: var(--bg-card);
-  }
-
-  .carrusel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-
-  .slide {
-    min-width: 100%;
-  }
-
-  .slide img {
-    height: clamp(200px, 28vw, 480px);
-    object-fit: cover;
-  }
-
-  .carrusel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(145, 26, 58, 0.75);
-    color: white;
-    border: none;
-    font-size: 18px;
-    padding: 10px 14px;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 50%;
-    transition: background 0.2s;
-  }
-
-  .carrusel-btn:hover {
-    background: rgba(145, 26, 58, 1);
-  }
-
-  .prev {
-    left: 12px;
-  }
-
-  .next {
-    right: 12px;
-  }
-
-  .carrusel-indicadores {
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 6px;
-    z-index: 10;
-  }
-
-  .dot {
-    width: 10px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid var(--color-guinda);
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-  .dot.active {
-    background: var(--color-guinda);
-    border-color: white;
-    transform: scale(1.2);
-  }
-
-  /* SPA View Controls */
-  .vista-seccion {
-    display: none;
-  }
-
-  .vista-seccion.active {
-    display: block;
-    animation: fadeIn 0.25s ease-in-out;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(6px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Botones y Colores Institucionales */
-  .btn-primary,
-  .bg-guinda {
-    background-color: var(--color-guinda) !important;
-    border-color: var(--color-guinda) !important;
-    color: #FFFFFF !important;
-  }
-
-  .btn-primary:hover {
-    background-color: #74132e !important;
-    border-color: #74132e !important;
-  }
-
-  .texto-guinda {
-    color: var(--color-guinda) !important;
-  }
-
-  .texto-dorado {
-    color: var(--color-dorado) !important;
-  }
-
-  /* Footer */
-  .footer {
-    background-color: var(--bg-header);
-    border-top: 3px solid var(--color-guinda) !important;
-  }
-
-  .link-footer {
-    color: var(--color-primario);
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .footer-bottom {
-    background-color: var(--color-guinda);
-  }
-
-  /* Soporte Móvil Adicional */
-  @media (max-width: 991.88px) {
-    .nav-link-inst {
-      padding: 10px 12px !important;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-  }
-</style>
+}
