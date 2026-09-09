@@ -253,3 +253,26 @@ h1, h2, h3, h4, h5,
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
 }
+
+
+/* REGLAS DE VISIBILIDAD GENERAL Y CONTRASTE */
+p, li, span, td, th, label {
+  color: var(--text-principal) !important;
+}
+
+/* ESPECIFICIDAD PARA LISTAS CON CLASE FS-6 */
+.fs-6, 
+.fs-6 li, 
+ul.fs-6 li, 
+ol.fs-6 li {
+  color: var(--color-gris-texto) !important;
+}
+
+/* TEXTO DENTRO DE TARJETAS Y CONTENEDORES */
+.card-body, 
+.card-body p, 
+.card-body li, 
+.card-body span, 
+.bg-body-tertiary {
+  color: var(--text-principal) !important;
+}
