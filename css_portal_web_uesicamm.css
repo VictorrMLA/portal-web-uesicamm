@@ -16,7 +16,6 @@
   --text-principal: #333333;
   --color-primario: var(--color-guinda);
   --color-secundario: var(--color-dorado);
-  --hover-menu: var(--color-guinda);
   --bg-card: #FFFFFF;
   --sombra: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
@@ -27,7 +26,6 @@
   --text-principal: #E0E0E0;
   --color-primario: var(--color-dorado);
   --color-secundario: #FFFFFF;
-  --hover-menu: var(--color-guinda);
   --bg-card: #1E1E1E;
   --sombra: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
@@ -52,7 +50,7 @@ body {
   .container-xxl { max-width: 1720px; }
 }
 
-/* Header y Navegación */
+/* Header y Navegación Base */
 .header {
   background-color: var(--bg-header);
   box-shadow: var(--sombra);
@@ -70,10 +68,16 @@ body {
   background-color: #ccc;
 }
 
-/* MENÚ SUPERIOR (ANULA EL ESTILO ROSA DEL CDN) */
-.main-nav .navbar-nav .nav-link,
-.navbar-nav .nav-link-inst {
+/* -------------------------------------------------------------------------
+   COMPORTAMIENTO DE MENÚS EN MODO CLARO (HOVER GUINDA + LETRAS BLANCAS)
+   ------------------------------------------------------------------------- */
+
+/* Estado Normal del Menú Superior */
+html[data-theme="light"] .main-nav .navbar-nav .nav-link,
+html[data-theme="light"] .navbar-nav .nav-link-inst,
+html[data-theme="light"] .header .nav-link {
   color: var(--color-guinda) !important;
+  background-color: transparent !important;
   font-weight: 600;
   font-size: 0.92rem;
   padding: 8px 14px !important;
@@ -81,40 +85,63 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-.main-nav .navbar-nav .nav-link:hover,
-.main-nav .navbar-nav .nav-link:focus,
-.main-nav .navbar-nav .nav-link.show,
-.navbar-nav .nav-link-inst:hover,
-.navbar-nav .nav-link-inst:focus,
-.navbar-nav .nav-link-inst.show {
+/* Estado Hover / Desplegado: Fondo Guinda y Letras Blancas */
+html[data-theme="light"] .main-nav .navbar-nav .nav-link:hover,
+html[data-theme="light"] .main-nav .navbar-nav .nav-link:focus,
+html[data-theme="light"] .main-nav .navbar-nav .nav-link.show,
+html[data-theme="light"] .navbar-nav .nav-link-inst:hover,
+html[data-theme="light"] .navbar-nav .nav-link-inst:focus,
+html[data-theme="light"] .navbar-nav .nav-link-inst.show,
+html[data-theme="light"] .header .nav-link:hover,
+html[data-theme="light"] .header .nav-link:focus,
+html[data-theme="light"] .header .nav-link.show {
   background-color: var(--color-guinda) !important;
   color: #FFFFFF !important;
 }
 
-/* DESPLEGABLES Y SUBMENÚS */
-.dropdown-menu {
-  background-color: var(--bg-card);
+/* Estado Normal de Submenús (Dropdown) */
+html[data-theme="light"] .dropdown-menu {
+  background-color: #FFFFFF !important;
   border-top: 3px solid var(--color-guinda) !important;
 }
 
-.dropdown-menu .dropdown-item {
-  color: var(--text-principal) !important;
+html[data-theme="light"] .dropdown-menu .dropdown-item {
+  color: #333333 !important;
   font-size: 0.88rem;
   padding: 10px 18px;
   transition: all 0.2s ease-in-out;
 }
 
-.dropdown-menu .dropdown-item:hover,
-.dropdown-menu .dropdown-item:focus,
-.dropdown-menu .dropdown-item:active {
+/* Estado Hover en Submenús: Fondo Guinda y Letras Blancas */
+html[data-theme="light"] .dropdown-menu .dropdown-item:hover,
+html[data-theme="light"] .dropdown-menu .dropdown-item:focus,
+html[data-theme="light"] .dropdown-menu .dropdown-item:active {
   background-color: var(--color-guinda) !important;
   color: #FFFFFF !important;
 }
 
-/* BOTONES INSTITUCIONALES (ELIMINA EL AZUL DE BOOTSTRAP) */
+/* -------------------------------------------------------------------------
+   BOTONES TARJETAS (CORRECCIÓN DEL AZUL DE BOOTSTRAP A GUINDA)
+   ------------------------------------------------------------------------- */
+
+.btn-outline-primary {
+  color: var(--color-guinda) !important;
+  border-color: var(--color-guinda) !important;
+  background-color: transparent !important;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary.active {
+  background-color: var(--color-guinda) !important;
+  border-color: var(--color-guinda) !important;
+  color: #FFFFFF !important;
+}
+
 .btn-primary,
-.btn-primary:focus,
-.btn-primary:active,
 .bg-guinda,
 .fondo-guinda {
   background-color: var(--color-guinda) !important;
@@ -125,21 +152,6 @@ body {
 .btn-primary:hover {
   background-color: #74132e !important;
   border-color: #74132e !important;
-  color: #FFFFFF !important;
-}
-
-.btn-outline-primary {
-  color: var(--color-guinda) !important;
-  border-color: var(--color-guinda) !important;
-  background-color: transparent !important;
-}
-
-.btn-outline-primary:hover,
-.btn-outline-primary:focus,
-.btn-outline-primary:active,
-.btn-outline-primary.active {
-  background-color: var(--color-guinda) !important;
-  border-color: var(--color-guinda) !important;
   color: #FFFFFF !important;
 }
 
