@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=1" />
@@ -10,22 +10,15 @@
   <meta name="author" content="Gobierno del Estado de Michoacán">
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   
-  <!-- Open Graph -->
   <meta property="og:title" content="Portal Web SEE / UESICAMM Michoacán" />
   <meta property="og:image" content="https://michoacan.gob.mx/images/michog.jpg"/>
   <meta property="og:description" content="Sistema de Gestión y Control para la Carrera de las Maestras y los Maestros" />
 
-  <!-- CDN Hojas de Estilos Oficiales Gobierno del Estado -->
   <link href="https://michoacan.gob.mx/cdn/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://michoacan.gob.mx/cdn/css/estilos.css?ver=1.00" rel="stylesheet">
-  
-  <!-- Iconografía FontAwesome 5.15.4 Oficial -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  
-  <!-- Hoja de Estilos Personalizada (Sistema) -->
   <link rel="stylesheet" href="css_portal_web_uesicamm.css">
 
-  <!-- Favicon Oficial CDN -->
   <link rel="shortcut icon" href="https://michoacan.gob.mx/cdn/img/favicon/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="https://michoacan.gob.mx/cdn/img/favicon/apple-touch-icon.png" />
   <link rel="apple-touch-icon" sizes="57x57" href="https://michoacan.gob.mx/cdn/img/favicon/apple-touch-icon-57x57.png" />
@@ -39,31 +32,26 @@
 </head>
 <body class="body-wrapper d-flex flex-column min-vh-100">
 
-  <!-- BARRA SUPERIOR Y MENÚ DE NAVEGACIÓN -->
   <header class="header sticky-top">
     <nav class="navbar main-nav navbar-expand-lg py-2" style="border-bottom: 5px solid #FFC3D0;">
       <div class="container-xxl">
         
-        <!-- LOGOTIPOS VECTORES Y SEPARADOR -->
         <a class="navbar-brand d-flex align-items-center gap-2 py-0" href="#" data-vista="inicio">
-          <img src="images/logo_see.svg" alt="Secretaría de Educación" class="logo">
+          <img src="images/logo_cee.svg" alt="Secretaría de Educación" class="logo">
           <div class="separador-logos mx-1"></div>
-          <img src="images/logo_uesicamm.svg" alt="UESICAMM Michoacán" class="logo">
+          <img src="images/logo_uesican.svg" alt="UESICAMM Michoacán" class="logo">
         </a>
         
-        <!-- BOTÓN MÓVIL HAMBURGUESA -->
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- MENÚS Y HERRAMIENTAS (DERECHA) -->
         <div class="collapse navbar-collapse" id="menuNavegacion">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1">
             <li class="nav-item">
               <a class="nav-link nav-link-inst" href="#" data-vista="inicio">Inicio</a>
             </li>
 
-            <!-- DESPLEGABLE: PROCESOS -->
             <li class="nav-item dropdown">
               <a class="nav-link nav-link-inst dropdown-toggle" href="#" id="navbarDropdownProcesos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Procesos
@@ -72,12 +60,11 @@
                 <li><a class="dropdown-item" href="#" data-vista="admision">Admisión</a></li>
                 <li><a class="dropdown-item" href="#" data-vista="promocion_h">Promoción Horizontal</a></li>
                 <li><a class="dropdown-item" href="#" data-vista="promocion_v">Promoción Vertical</a></li>
-                <li><a class="dropdown-item" href="#" data-vista="cambios">Cambios de CT</a></li>
-                <li><a class="dropdown-item" href="#" data-vista="cambios">Permutas</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" data-vista="cambios">Cambios de Adscripción (CCT)</a></li>
               </ul>
             </li>
 
-            <!-- DESPLEGABLE: DOCUMENTOS -->
             <li class="nav-item dropdown">
               <a class="nav-link nav-link-inst dropdown-toggle" href="#" id="navbarDropdownDocs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Documentos
@@ -89,26 +76,17 @@
               </ul>
             </li>
 
-            <!-- PORTAL ADMINISTRATIVO -->
             <li class="nav-item">
-              <a class="nav-link nav-link-inst" href="#" data-vista="siia">SIGECAMM</a>
+              <a class="nav-link nav-link-inst" href="#" data-vista="siia">Portal Administrativo</a>
             </li>
 
-            <!-- SOPORTE TÉCNICO -->
             <li class="nav-item dropdown">
               <a class="nav-link nav-link-inst dropdown-toggle" href="#" id="navbarDropdownSoporte" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Mesa de ayuda
+                Soporte
               </a>
               <ul class="dropdown-menu shadow-sm" aria-labelledby="navbarDropdownSoporte">
-                <li><a class="dropdown-item" href="#" data-vista="soporte">Soporte TI</a></li>
+                <li><a class="dropdown-item" href="#" data-vista="soporte">Mesa de Ayuda / Tickets</a></li>
               </ul>
-            </li>
-
-            <!-- BOTÓN DE TEMA -->
-            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-              <button class="btn btn-outline-secondary btn-sm rounded-circle p-0 d-flex align-items-center justify-content-center" id="btnTema" title="Cambiar tema" style="width: 36px; height: 36px;">
-                🌙
-              </button>
             </li>
           </ul>
         </div>
@@ -117,7 +95,6 @@
     </nav>
   </header>
 
-  <!-- CARRUSEL INSTITUCIONAL -->
   <div class="container-xxl my-3 my-md-4" id="carrusel" style="display: block;">
     <div class="carrusel-contenedor position-relative overflow-hidden rounded shadow-sm">
       <div class="carrusel-track" id="trackCarrusel">
@@ -135,24 +112,17 @@
     </div>
   </div>
 
-  <!-- CONTENEDOR DINÁMICO SPA -->
-  <main class="container-xxl py-3 py-md-4 flex-grow-1" id="app-root">
-    <!-- Carga dinámica vía js_portal_web_uesicamm.js -->
-  </main>
+  <main class="container-xxl py-3 py-md-4 flex-grow-1" id="app-root"></main>
 
-  <!-- PIE DE PÁGINA NORMATIVO (CDN GOBIERNO DEL ESTADO DE MICHOACÁN) -->
   <footer class="footer mt-auto pt-4 bg-white border-top">
     <div class="container footer-main pb-3">
       <div class="row align-items-center gy-3">
-        
-        <!-- Izquierda: Imagotipo Gris CDN Oficial -->
         <div class="col-lg-4 text-center">
           <div class="footer-logo">
             <img src="https://michoacan.gob.mx/cdn/img/logo-gris.svg" class="logoFooter img-fluid" alt="Gobierno del Estado de Michoacán" style="max-height: 75px;">
           </div>
         </div>
         
-        <!-- Centro: Redes Sociales FontAwesome 5 y Enlaces Directos -->
         <div class="col-lg-4 text-center">
           <ul class="social-icons list-inline mb-2">
             <li class="list-inline-item mx-1">
@@ -178,28 +148,23 @@
           </div>
         </div>
 
-        <!-- Derecha: Hashtag Oficial -->
         <div class="col-lg-4 text-center">
           <h4 class="texto-gris fw-bold mb-0">#MichoacánEsMejor</h4>
         </div>
 
-        <!-- Separador -->
         <div class="col-12 my-2">
           <hr class="my-0">
         </div>
 
-        <!-- Leyenda de Derechos / Créditos -->
         <div class="col-12 text-center small text-muted">
-          &copy; Desarrollado por la Unidad Estatal del Sistema para la Carrera de las Maestras y los Maestros en Michoacán | <b class="texto-guinda">Gobierno del Estado de Michoacán 2026</b>
+          &copy; Desarrollado por Dirección de Tecnologías de la Información | <b class="texto-guinda">Gobierno del Estado de Michoacán 2026</b>
         </div>
       </div>
     </div>
 
-    <!-- Pleca Guinda Inferior -->
     <div class="container-fluid fondo-guinda footer-pleca py-2"></div>
   </footer>
 
-  <!-- JAVASCRIPTS OFICIALES CDN + CONTROLADOR SPA -->
   <script src="https://www.michoacan.gob.mx/cdn/js/jquery-3.6.0.min.js"></script>
   <script src="https://www.michoacan.gob.mx/cdn/js/bootstrap.js"></script>
   <script src="js_portal_web_uesicamm.js"></script>
