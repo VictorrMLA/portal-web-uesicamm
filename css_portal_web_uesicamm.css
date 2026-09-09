@@ -43,17 +43,13 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Ajustes Pantallas Ultra Anchas (27 y 32 Pulgadas) */
+/* Ajustes Pantallas Ultra Anchas */
 @media (min-width: 1400px) {
-  .container-xxl {
-    max-width: 1320px;
-  }
+  .container-xxl { max-width: 1320px; }
 }
 
 @media (min-width: 1920px) {
-  .container-xxl {
-    max-width: 1720px;
-  }
+  .container-xxl { max-width: 1720px; }
 }
 
 /* Header y Navegación */
@@ -74,8 +70,10 @@ body {
   background-color: #ccc;
 }
 
-.nav-link-inst {
-  color: var(--color-primario) !important;
+/* MENÚ SUPERIOR (ANULA EL ESTILO ROSA DEL CDN) */
+.main-nav .navbar-nav .nav-link,
+.navbar-nav .nav-link-inst {
+  color: var(--color-guinda) !important;
   font-weight: 600;
   font-size: 0.92rem;
   padding: 8px 14px !important;
@@ -83,30 +81,70 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-.nav-link-inst:hover,
-.nav-link-inst:focus,
-.nav-link-inst.show {
+.main-nav .navbar-nav .nav-link:hover,
+.main-nav .navbar-nav .nav-link:focus,
+.main-nav .navbar-nav .nav-link.show,
+.navbar-nav .nav-link-inst:hover,
+.navbar-nav .nav-link-inst:focus,
+.navbar-nav .nav-link-inst.show {
   background-color: var(--color-guinda) !important;
   color: #FFFFFF !important;
 }
 
+/* DESPLEGABLES Y SUBMENÚS */
 .dropdown-menu {
   background-color: var(--bg-card);
   border-top: 3px solid var(--color-guinda) !important;
 }
 
-.dropdown-item {
-  color: var(--text-principal);
+.dropdown-menu .dropdown-item {
+  color: var(--text-principal) !important;
   font-size: 0.88rem;
   padding: 10px 18px;
   transition: all 0.2s ease-in-out;
 }
 
-.dropdown-item:hover,
-.dropdown-item:focus {
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:active {
   background-color: var(--color-guinda) !important;
   color: #FFFFFF !important;
 }
+
+/* BOTONES INSTITUCIONALES (ELIMINA EL AZUL DE BOOTSTRAP) */
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:active,
+.bg-guinda,
+.fondo-guinda {
+  background-color: var(--color-guinda) !important;
+  border-color: var(--color-guinda) !important;
+  color: #FFFFFF !important;
+}
+
+.btn-primary:hover {
+  background-color: #74132e !important;
+  border-color: #74132e !important;
+  color: #FFFFFF !important;
+}
+
+.btn-outline-primary {
+  color: var(--color-guinda) !important;
+  border-color: var(--color-guinda) !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary.active {
+  background-color: var(--color-guinda) !important;
+  border-color: var(--color-guinda) !important;
+  color: #FFFFFF !important;
+}
+
+.texto-guinda { color: var(--color-guinda) !important; }
+.texto-dorado { color: var(--color-dorado) !important; }
 
 /* Carrusel Responsivo Dinámico */
 .carrusel-contenedor {
@@ -150,13 +188,8 @@ body {
   background: rgba(145, 26, 58, 1);
 }
 
-.prev {
-  left: 12px;
-}
-
-.next {
-  right: 12px;
-}
+.prev { left: 12px; }
+.next { right: 12px; }
 
 .carrusel-indicadores {
   position: absolute;
@@ -184,46 +217,15 @@ body {
 }
 
 /* SPA View Controls */
-.vista-seccion {
-  display: none;
-}
-
+.vista-seccion { display: none; }
 .vista-seccion.active {
   display: block;
   animation: fadeIn 0.25s ease-in-out;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Botones y Colores Institucionales */
-.btn-primary,
-.bg-guinda {
-  background-color: var(--color-guinda) !important;
-  border-color: var(--color-guinda) !important;
-  color: #FFFFFF !important;
-}
-
-.btn-primary:hover {
-  background-color: #74132e !important;
-  border-color: #74132e !important;
-}
-
-.texto-guinda {
-  color: var(--color-guinda) !important;
-}
-
-.texto-dorado {
-  color: var(--color-dorado) !important;
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Footer */
