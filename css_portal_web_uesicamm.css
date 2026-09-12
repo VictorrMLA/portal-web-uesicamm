@@ -40,15 +40,6 @@ h1, h2, h3, h4, h5,
   color: var(--color-gris-texto) !important;
 }
 
-/* Ajustes Pantallas Ultra Anchas */
-@media (min-width: 1400px) {
-  .container-xxl { max-width: 1320px; }
-}
-
-@media (min-width: 1920px) {
-  .container-xxl { max-width: 1720px; }
-}
-
 /* Header y Navegación Base */
 .header {
   background-color: var(--bg-header);
@@ -253,7 +244,6 @@ h1, h2, h3, h4, h5,
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
 }
-
 
 /* REGLAS DE VISIBILIDAD GENERAL Y CONTRASTE */
 p, li, span, td, th, label {
